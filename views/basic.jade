@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+      if (foo) {
+         bar(1 + 5)
+      }
+    script(href='js/main.js')
+  body
+    h1 Jade - node template engine
+    #container.col
+      if youAreUsingJade
+        p You are amazing
+      else
+        p Get on it!
+      p.
+        Jade is a terse and simple
+        templating language with a
+        strong focus on performance
+        and powerful features.
+        
+    // inline javascript and interpolation
+    ul
+        - for(var i = 0; i < 5; i++)
+            li.product.faded Product #{i+1}
+    
+    // inline javascript with conditionals
+    - var user = {name:"Steve",age:46};
+    if user.age > 40
+      p Dude, you're old
+      
+    // other ways to iterate over arrays
+    ul
+      each val, index in ['cyan', 'yellow', 'magenta']
+        li= 'position ' + (index+1) + ': ' + val
