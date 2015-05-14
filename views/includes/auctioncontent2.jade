@@ -1,0 +1,160 @@
+.padding-to-nav.dark-blue-div
+    .bottom-white-div.bottom-border
+        // bottom white div
+        .row
+          // This is the big row containing two columns: one for the form, and another for the pictures
+          .col-md-4
+            // div containing the form
+            .green-text.green-background
+              form(action='index.html', method='post')
+                // Here is where the form starts
+                p#limit-your-search Limit your search by:
+                input.search-btn(type='search', placeholder='')
+                button(type='search-btn') Search
+                hr
+                br
+                fieldset
+                  label.condition(for='condition') Condition:
+                  fieldset.condition-radio
+                    label.condition(for='condition')
+                    input(type='radio', name='cloth-condition', value='new')
+                     New
+                    br
+                    label.condition(for='condition')
+                    input(type='radio', name='cloth-condition', value='gently-used')
+                     Gently Used
+                br
+                br
+                fieldset
+                  label.size(for='size') Size:
+                  fieldset
+                    input(type='radio', name='cloth-size', value='four')
+                     4
+                    input(type='radio', name='cloth-size', value='five')
+                      5
+                    br
+
+                    input(type='radio', name='cloth-size', value='six')
+                      6
+
+                    input(type='radio', name='cloth-size', value='seven')
+                      7
+                    br
+
+                    input(type='radio', name='cloth-size', value='eigth')
+                      8
+
+                    input(type='radio', name='cloth-size', value='nine')
+                      9
+                    br
+
+                    input(type='radio', name='cloth-size', value='ten')
+                      10
+
+                    input(type='radio', name='cloth-size', value='eleven')
+                      11
+                    br
+                br
+                br
+
+                fieldset
+                  label.season(for='seasons') Seasons:
+
+                  fieldset
+                    input(type='radio', name='cloth-season', value='all-seasons')
+                      All Seasons
+                    br
+
+                    input(type='radio', name='cloth-season', value='spring')
+                      Spring
+                    br
+
+                    input(type='radio', name='cloth-season', value='summer')
+                      Summer
+                    br
+
+                    input(type='radio', name='cloth-season', value='Fall')
+                      Fall
+                    br
+
+                    input(type='radio', name='cloth-season', value='Winter')
+                      Winter
+                    br
+                br
+                br
+
+                label.types(for='type') Type:
+
+                fieldset
+                  input(type='radio', name='cloth-type', value='any-type')
+                    Any
+                  br
+
+                  input(type='radio', name='cloth-type', value='one-piece')
+                    One-Piece
+                  br
+
+                  input(type='radio', name='cloth-type', value='tops')
+                    Tops
+                  br
+
+                  input(type='radio', name='cloth-type', value='bottoms')
+                    Bottoms
+                  br
+                br
+                br
+
+                label.brand(for='brand') Brand:
+                br
+
+                select.brand(name='cloth-brand')
+                  option(value='janie-and-jack') Janie and Jack
+
+                  option(value='gap-kids') GAP Kids
+
+                  option(value='gymboree') Gymboree
+
+                  option(value='carters') Carter&apos;s
+
+                  option(value='old-navy') Old Navy
+
+                  option(value='levis') Levi&apos;s
+
+                  option(value='bugaboo') Bugaboo
+
+                br
+                br
+                br
+                br
+
+
+          .col-md-8
+            // Second column starts here
+            .row.green-text.all-twin-border
+              .col-md-12 All &gt; Twin &gt; B/G
+
+            .row
+              // Sort by row
+              .col-md-6
+                label.sortby-div(for='sortby-div') Sort by:
+
+                select.sortby-div(name='sortby-div')
+                  option(value='price') Price
+
+                  option(value='a-to-z') A to Z
+
+                  option(value='z-to-a') Z to A
+
+                  option(value='size') Size
+
+              .col-md-6.green-text
+                ul.ppnv
+                  li#hPrev prev
+
+                  li#hPagenum page num
+
+                  li#hNext next
+
+                  li#hViewall view all
+            #imagesDiv.row.green-text.img-div-border
+
