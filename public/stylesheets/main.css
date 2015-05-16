@@ -1,3 +1,6 @@
+ /* --- Fonts selection ---*/
+@import url(https://fonts.googleapis.com/css?family=Reenie+Beanie|Architects+Daughter|Rock+Salt|Special+Elite|Nunito|Inconsolata);
+
 /************************
 	GENERAL
 ****************************/
@@ -295,7 +298,6 @@ height: 30px;
 .first-last-col-soc-med {
   height: 116px;
 }
-
 
 
 /************************

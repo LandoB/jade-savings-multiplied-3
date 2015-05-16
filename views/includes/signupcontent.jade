@@ -1,0 +1,36 @@
+.padding-to-nav.dark-blue-div
+	.bottom-white-div.bottom-border
+		.row
+			.col-md-12
+				.green-text.green-background.please-signin
+					h2 Please Sign Up
+					br
+					form.form-signin(action="/login", method="post")
+						h4 Name: &nbsp;
+							input.input-block-level(type="text", name="username", placeholder="FirstName LastName")
+						br
+						h4 Email: &nbsp;
+							input.input-block-level(type="email", name="email", placeholder="Email Address")
+						br
+						| I am the proud &nbsp;
+						select
+							option(value='father') Father
+							option(value='mother') Mother
+							option(value='aunt') Aunt
+							option(value='uncle') Uncle
+							option(value='grandpa') Grandpa
+							option(value='grandma') Grandma
+						| &nbsp; of 5 kids
+						br
+						br
+						h4 Password: &nbsp;
+							input.input-block-level(type="password", name="password", placeholder="Password")
+						br
+						h4 Confirm password: &nbsp;
+							input.input-block-level(type="password", name="cpassword", placeholder="Confirm password")
+						br
+						label.checkbox.
+							<input type="checkbox" value="remember-me" /> I accept the terms of conditions
+						br
+					button.btn.btn-large.btn-primary.btn-press(type="submit") Sign in
+					br

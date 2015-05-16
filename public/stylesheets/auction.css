@@ -82,5 +82,18 @@ ul.ppnv {
   border-bottom-left-radius: 50px;
 }
 
+.please-signin {
+  text-align: center;
+  font-family: 'Nunito';
+  font-size: 1.5em;
+  background-color: #fff;
+}
+
+.form-signin {
+  width: 50%;
+  text-align: left;
+  margin-left: 30%;
+}
+
 
 
