@@ -24,11 +24,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Include instructions on how to connect to the database
-//var db = require('./db');
+var db = require('./db');
 
 // Set up route handlers for /todo URL
-// var item = require('./routes/item');
-// app.use('/item', item);
+var item = require('./routes/item');
+app.use('/item', item);
 
 // Set up route handlers for /budget URL
 // var budgets = require('./routes/budget');

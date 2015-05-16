@@ -43,8 +43,7 @@ var sendItemList = function (req, res, next) {
         title: "List of Items",
         message: "My Items List",
         groceries: groceries,
-        user: theUser.username,
-        budget: theUser.budget
+        user: theUser.username
       });
     }
   });
@@ -78,9 +77,9 @@ router.get('/:id', function (req, res) {
 
     // Find was successful
     } else {
-      res.render('grocery', {
-        title : 'Grocery Shopping List',
-        grocery: thisItem
+      res.render('item', {
+        title : 'Items List',
+        item: thisItem
       });
     }
   });
@@ -98,23 +97,25 @@ router.get('/', function (req, res) {
   // ***********************************************
   // This is the code changed for the new schema   *
   // ***********************************************
-  res.render('grocery', {
-    title : 'Grocery Shopping List',
+  res.render('item', {
+    title : 'Items List',
     // action: "EDIT",
-    grocery: {
-      item: '',
-      quantity: 1,
-      price: 0,
-      cost: 0,
-      found: false
+    item: {
+      item: 'iGolf',
+      seller: 'Apple Inc',
+      price: 82.19,
+      image: '',
+      found: false,
+      user: '',
+      endDate: Date
     }
   });
 });
 
 // Handle a DELETE request from the client to /grocery
 router.delete('/', function (req, res) {
-console.log(req.body.grocery_id);
-  Grocery.find({ _id: req.body.grocery_id })
+console.log(req.body.item_id);
+  Item.find({ _id: req.body.item_id })
       .remove(function (err) { // this is how you delete records from the db: .remove
     // Was there an error when removing?
     if (err) {
@@ -134,24 +135,25 @@ router.post('/', function (req, res, next) {
   if (req.body.db_id !== "") {
 
     // Find it
-    Grocery.findOne({ _id: req.body.db_id }, function (err, foundGrocery) {
+    Item.findOne({ _id: req.body.db_id }, function (err, foundItem) {
 
       if (err) {
-        sendError(req, res, err, "Could not find that task");
+        sendError(req, res, err, "Could not find that item");
       } else {
         // Found it. Now update the values based on the form POST data.
-        foundGrocery.item = req.body.item;
-        foundGrocery.quantity = req.body.quantity;
-        foundGrocery.price = req.body.price;
-        foundGrocery.cost = (req.body.price * req.body.quantity);
-        foundGrocery.found = (req.body.found) ? req.body.found : false;
+        foundItem.item = req.body.item;
+        foundItem.seller = req.body.quantity;
+        foundItem.price = req.body.price;
+        foundItem.image = (req.body.price * req.body.quantity);
+        foundItem.found = (req.body.found) ? req.body.found : false;
+        foundItem.endDate = req.body.endDate;
 
         // Save the updated item.
-        foundGrocery.save(function (err, newOne) {  // this is how you save records to the db: save
+        foundItem.save(function (err, newOne) {  // this is how you save records to the db: save
           if (err) {
             sendError(req, res, err, "Could not save item with updated information");
           } else {
-            res.redirect('/grocery/list');
+            res.redirect('/item/list');
             // res.redirect('/grocery/list?action=' + "EDIT");
           }
         });
@@ -171,13 +173,12 @@ router.post('/', function (req, res, next) {
     console.log('theFormPostData',theFormPostData);
 
 
-    var myGrocery = new Grocery(theFormPostData);
-    myGrocery.cost = (myGrocery.price * myGrocery.quantity).toFixed(2);
-    myGrocery.save(function (err, grocery) {
+    var myItem = new Item(theFormPostData);
+    myItem.save(function (err, item) {
       if (err) {
         sendError(req, res, err, "Failed to save item");
       } else {
-        res.redirect('/grocery/list');
+        res.redirect('/item/list');
       }
     });
   }
