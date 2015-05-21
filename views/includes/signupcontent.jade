@@ -5,7 +5,7 @@
 				.green-text.green-background.please-signin
 					h2 Please Sign Up
 					br
-					form.form-signin(action="/login", method="post")
+					form.form-signin(action="/users/register", method="post")
 						h4 Name: &nbsp;
 							input.input-block-level(type="text", name="username", placeholder="FirstName LastName")
 						br
@@ -32,5 +32,5 @@
 						label.checkbox.
 							<input type="checkbox" value="remember-me" /> I accept the terms of conditions
 						br
-					button.btn.btn-large.btn-primary.btn-press(type="submit") Sign in
-					br
+						button.btn.btn-large.btn-primary.btn-press(type="submit") Sign in
+						br

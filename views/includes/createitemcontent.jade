@@ -1,0 +1,24 @@
+.padding-to-nav.dark-blue-div
+	.bottom-white-div.bottom-border
+		.row
+			.col-md-12
+				.green-text.green-background.please-signin
+					fieldset
+						form#createItem(method='POST', action='/auction/createItem')
+							input#inputText.form-control(type='hidden', name='db_id', aria-describedby='sizing-addon1', value='#{auctionItem._id}')
+							h4 Title:
+								input#inputText.form-control(type='text', name='title', aria-describedby='sizing-addon1', value='#{auctionItem.title}')
+							h4 Type:
+								input#inputText.form-control(type='type', name='type', aria-describedby='sizing-addon1', value='#{auctionItem.type}')
+							h4 Size:
+									input#inputText.form-control(type='size',name='size', aria-describedby='sizing-addon1', value='#{auctionItem.size}')
+							h4 Season:
+								input#inputText.form-control(type='season', name='season', aria-describedby='sizing-addon1', value='#{auctionItem.season}')
+							h4 Condition:
+								input#inputText.form-control(type='condition', name='condition', aria-describedby='sizing-addon1', value='#{auctionItem.condition}')
+							h4 Image URL:
+								input#inputText.form-control(type='text', name='image', aria-describedby='sizing-addon1', value='#{auctionItem.image}')
+							h4 Brand:
+								input#inputText.form-control(type='brand', name='brand', aria-describedby='sizing-addon1', value='#{auctionItem.brand}')
+							br
+							button.btn.btn-large.btn-primary.btn-press(type="submit") Submit

@@ -2,10 +2,23 @@ doctype html
 html
   head
     title= title
+
+    //****** BOOTSTRAP
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
-    link(href='http://fonts.googleapis.com/css?family=Corben:400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+
+    //***** CUSTOM STYLESHEET
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/main.css')
     link(rel='stylesheet', href='/stylesheets/auction.css')
+
+    //****** GOOGLE FONTS LINK
+    link(href='http://fonts.googleapis.com/css?family=Corben:400,700', rel='stylesheet', type='text/css')
+
+    //***** JQUERY
+    script(src='//code.jquery.com/jquery-1.11.2.min.js')
+    //*** MORE BOOTSTRAP (JS)
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    script(src='/javascripts/auctionHandler.js')
   body
     block content

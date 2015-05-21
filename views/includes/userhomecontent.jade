@@ -1,0 +1,26 @@
+.padding-to-nav.dark-blue-div
+	.bottom-white-div.bottom-border
+		.row
+			.col-md-12
+				.green-text.green-background.please-signin
+					h2 Welcome #{user}
+					br
+					h3 You have #{itemLength} auction items total.
+					br
+					h3 Here Are Your Items:
+						each auctionItem in auctionItems
+							div.auction-item(id='auction_#{auctionItem._id}')
+								ul
+									li Title: #{auctionItem.title}
+									li Type: #{auctionItem.type}
+									li Size: #{auctionItem.size}
+									li Season: #{auctionItem.season}
+									li Condition: #{auctionItem.condition}
+									li Image URL: #{auctionItem.image}
+									li Brand: #{auctionItem.brand}
+									button.btn.editButton.btn-link(id='#{auctionItem._id}', type='button', daria-hidden='true')
+										span.glyphicon.glyphicon-pencil(aria-hidden='true')
+									button.btn.deleteButton.btn-link(id='#{auctionItem._id}', type='button', aria-hidden='true')
+										span.glyphicon.glyphicon-trash(aria-hidden='true')
+									br
+

@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var auction = require('./routes/auction');
 
 var app = express();
 
@@ -23,22 +23,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Include instructions on how to connect to the database
 var db = require('./db');
 
-// Set up route handlers for /todo URL
-var item = require('./routes/item');
-app.use('/item', item);
-
-// Set up route handlers for /budget URL
-// var budgets = require('./routes/budget');
-// app.use('/budget', budgets);
-
-// Set up route handlers for the root URL
 app.use('/', routes);
-// Set up route handlers for /user URL
 app.use('/users', users);
-
+app.use('/auction', auction);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

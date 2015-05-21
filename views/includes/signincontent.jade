@@ -4,10 +4,18 @@
 			.col-md-12
 				.green-text.green-background.please-signin
 					h2 Please Sign In
-					input.input-block-level(type="text", name="username", placeholder="Email address")
 					br
-					input.input-block-level(type="password", name="password", placeholder="Password")
-					label.checkbox.
-						<input type="checkbox" value="remember-me" /> Remember me
-					button.btn.btn-large.btn-primary.btn-about(type="submit") Sign in
+					form.form-signin(action="/users/login", method="post")
+						h4 Name: &nbsp;
+							input.input-block-level(type="text", name="username", placeholder="FirstName LastName")
+						br
+						h4 Password: &nbsp;
+							input.input-block-level(type="password", name="password", placeholder="Password")
+						br
+						label.checkbox.
+							<input type="checkbox" value="remember-me" /> Remember me
+						button.btn.btn-large.btn-primary.btn-about(type="submit") Sign in
+
+
+
 

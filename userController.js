@@ -10,7 +10,7 @@ User.prototype.login = function (username, password) {
 
   console.log('Let\'s find a user with the same username and password as what was submitted in the form');
 
-  UserModel.findOne({username: username}, function (err, user) {
+  UserModel.findOne({username: username, password: password}, function (err, user) {
     if (!err) {
 
       console.log('We looked for a user and no error.');
@@ -41,10 +41,6 @@ User.prototype.login = function (username, password) {
 
 User.prototype.logout = function (username, password) {
   this.currentUser = null;
-};
-
-User.prototype.budgetUpdate = function (budget) {
-  this.currentUser.budget = budget;
 };
 
 User.prototype.getCurrentUser = function () {
